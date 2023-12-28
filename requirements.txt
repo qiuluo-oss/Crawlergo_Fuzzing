@@ -1,0 +1,8 @@
+simplejson
+requests
+fake_useragent
+argparse
+colorama
+distributed
+urllib3
+httpx[socks]

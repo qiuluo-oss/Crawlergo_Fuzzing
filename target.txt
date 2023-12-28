@@ -1,0 +1,5 @@
+testhtml5.vulnweb.com
+testaspxxxx.vulnweb.com
+testphp.vulnweb.com
+http://122.116.68.161:8082/
+https://101.33.237.190:8004/
