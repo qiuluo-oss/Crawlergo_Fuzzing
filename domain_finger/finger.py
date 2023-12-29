@@ -19,3 +19,4 @@ def finger(url):
     print(f"{config.bcolors.OK}----------指纹识别结束: {url} ----------{config.bcolors.ENDC}")
     print("\n\t")
     os.chdir(old_path)
+    return result

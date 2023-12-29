@@ -10,14 +10,14 @@ import os
 from domain_finger import finger
 
 
-def process_url_all(url, param_filename, proxies):
+def process_url_all(url, param_filename, cms, proxies):
     """all模式扫描"""
     if os.path.exists(param_filename):
         fuzz.process_url_fuzz(url, param_filename, proxies)
     else:
         print(f"{config.bcolors.FAIL}{param_filename} does not exist{config.bcolors.ENDC}")
 
-    common.process_url_common(url, proxies)
+    common.process_url_common(url, cms, proxies)
 
 
 def parse_args():
@@ -67,12 +67,12 @@ if __name__ == '__main__':
             print("\n\t")
 
             # 指纹识别
-            finger.finger(url)
+            cms_res = finger.finger(url)
 
             if args.model == "all":
                 try:
                     param_filename = domain_Crawlergo.crawl_url(url, proxy_one)
-                    process_url_all(url, param_filename, proxy_one)
+                    process_url_all(url, param_filename, cms_res, proxy_one)
                 except Exception as e:
                     print(f"{config.bcolors.FAIL}{e} does not exist{config.bcolors.ENDC}")
             elif args.model == "fuzz":
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                 except Exception as e:
                     print(f"{config.bcolors.FAIL}{e} does not exist{config.bcolors.ENDC}")
             elif args.model == "common":
-                common.process_url_common(url, proxy_one)
+                common.process_url_common(url, cms_res, proxy_one)
             else:
                 print(f"{config.bcolors.FAIL}语法错误！请执行[python3 main.py -h]查看语法帮助！{config.bcolors.ENDC}")
         else:
@@ -102,19 +102,19 @@ if __name__ == '__main__':
                 print("\n\t")
 
                 # 指纹识别
-                finger.finger(url)
+                cms_res = finger.finger(url)
 
                 if args.model == "all":
                     try:
                         param_filename = domain_Crawlergo.crawl_url(url, proxy_one)
-                        process_url_all(url, param_filename, proxy_one)
+                        process_url_all(url, param_filename, cms_res, proxy_one)
                     except Exception as e:
                         print(f"{config.bcolors. FAIL}: {e}")
                 elif args.model == "fuzz":
                     param_filename = domain_Crawlergo.crawl_url(url, proxy_one)
                     fuzz.process_url_fuzz(url, param_filename, proxy_one)
                 elif args.model == "common":
-                    common.process_url_common(url, proxy_one)
+                    common.process_url_common(url, cms_res, proxy_one)
                 else:
                     print(f"{config.bcolors.FAIL}语法错误！请执行[python3 main.py -h]查看语法帮助！{config.bcolors.ENDC}")
             else:

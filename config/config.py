@@ -41,7 +41,7 @@ ehole_path = "D:/Crawlergo_Fuzzing/tools/ehole/"
 ip = 'xx.xx.xx.xx'
 port = 1080
 username = 'xxx'
-password = 'xxx'
+password = 'xxxx'
 proxies = {
 	'http://': f'socks5://{username}:{password}@{ip}:{port}',
 	'https://': f'socks5://{username}:{password}@{ip}:{port}'
