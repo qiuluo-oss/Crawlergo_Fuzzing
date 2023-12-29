@@ -1,9 +1,6 @@
 # 特色
 
-1、本漏洞库已经有21个指纹的漏洞，总共315个payload，后面会持续更新。
-![image](https://github.com/qiuluo-oss/Crawlergo_Fuzzing/assets/72497146/f55a23dc-ec9b-4c06-8a63-620d3200a9fd)
-
-![image](https://github.com/qiuluo-oss/Crawlergo_Fuzzing/assets/72497146/be0631d5-7e34-42dd-b452-ce7a8bb27d14)
+1、本漏洞库已经拥有OA系列、大华、海康威视、用友、spring、fastjson等21个指纹的漏洞信息，共315个payload，后面会持续更新。
 
 2、对web网站指纹识别后，可采用common模式：只漏扫对应指纹的漏洞，针对性扫描，提升渗透效率。
 
